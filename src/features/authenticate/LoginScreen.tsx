@@ -6,13 +6,13 @@ import SocialLogin from '../../components/common/SocialLogin';
 import StyledInput from '../../components/common/StyledInput';
 import {TAB_NAVIGATION_ROOT} from '../../navigation/config/routes';
 import {navigate} from '../../navigation/NavigationService';
+import ImagePicker from 'react-native-image-crop-picker';
 
 const LoginScreen = () => {
   const [formData, setFormData] = useState(false);
 
   const goToHome = () => {
     navigate(TAB_NAVIGATION_ROOT.HOME_ROUTE.HOME_SCREEN, {
-      userName: 'DuONG HAI QUAN',
     });
   };
 
@@ -87,9 +87,6 @@ const styles = StyleSheet.create({
     width : 250,
     height : 250,
     marginTop : 30,
-    color: '#e54a2b',
-    fontSize: 56,
-    fontWeight: 'bold',
   },
   welcomeText: {
     color: '#e54a2b',
