@@ -7,10 +7,12 @@ import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
 import Images from '../../assests';
 import HomeScreen from '../../features/home/HomeScreen';
+import MainScreen from '../../features/home/BottomTab';
 import ProfileScreen from '../../features/settings/ProfileScreen';
 import StyledTabBar from '../component/StyledTabBar';
 import navigationConfigs, {tabScreenOptions} from '../config/options';
 import {TAB_NAVIGATION_ROOT} from '../config/routes';
+import MenuScreen from '../../features/home/MenuScreen';
 
 const MainStack = createStackNavigator();
 const MainTab = createBottomTabNavigator();
@@ -30,22 +32,30 @@ const SettingStack = () => (
       name={TAB_NAVIGATION_ROOT.SETTING_ROUTE.ROOT}
       component={ProfileScreen}
     />
-  </MainStack.Navigator>
+  </MainStack.Navigator>);
+  
+  const MenuScreenStack = () => (
+    <MainStack.Navigator screenOptions={navigationConfigs}>
+      <MainStack.Screen
+        name={TAB_NAVIGATION_ROOT.MENU_ROUTE.MENU_SCREEN}
+        component={MenuScreen}
+      />
+    </MainStack.Navigator>
 );
 
 const MainTabContainer = () => {
   const ArrayTabs = [
     {
-      name: TAB_NAVIGATION_ROOT.HOME_ROUTE.ROOT,
-      title: 'Trang chủ',
-      component: HomeStack,
-      icon: Images.icons.tab.home,
+      name: TAB_NAVIGATION_ROOT.MENU_ROUTE.ROOT,
+      title: 'Menu',
+      component: MenuScreenStack,
+      icon: Images.icons.menu,
     },
     {
-      name: TAB_NAVIGATION_ROOT.SETTING_ROUTE.ROOT,
+      name: TAB_NAVIGATION_ROOT.SETTING_ROUTE.SETTING_SCREEN,
       title: 'Cài đặt',
       component: SettingStack,
-      icon: Images.icons.tab.setting,
+      icon: Images.icons.settings,
     },
   ];
   return (

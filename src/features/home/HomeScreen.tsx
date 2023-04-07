@@ -9,7 +9,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const HomeScreen = ({route, props}: any) => {
   const goToStart = () => {
-    navigate(TAB_NAVIGATION_ROOT.AUTHENTICATE_ROUTE.LOGIN, {
+    navigate(TAB_NAVIGATION_ROOT.BOTTOMTAB_ROUTE.BOTTOMTAB_SCREEN, {
     });
   };
   return (
