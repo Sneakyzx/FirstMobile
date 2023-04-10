@@ -13,6 +13,8 @@ import StyledTabBar from '../component/StyledTabBar';
 import navigationConfigs, {tabScreenOptions} from '../config/options';
 import {TAB_NAVIGATION_ROOT} from '../config/routes';
 import MenuScreen from '../../features/home/MenuScreen';
+import CreditCardForm from '../../Hung/CreditCardForm';
+
 
 const MainStack = createStackNavigator();
 const MainTab = createBottomTabNavigator();
@@ -41,7 +43,17 @@ const SettingStack = () => (
         component={MenuScreen}
       />
     </MainStack.Navigator>
+     
 );
+const PaymentScreenStack = () => (
+  <MainStack.Navigator screenOptions={navigationConfigs}>
+    <MainStack.Screen
+      name={TAB_NAVIGATION_ROOT.PAYMENT_ROUTE.PAYMENT_SCREEN}
+      component={CreditCardForm}
+    />
+  </MainStack.Navigator>
+  )
+
 
 const MainTabContainer = () => {
   const ArrayTabs = [
@@ -56,6 +68,12 @@ const MainTabContainer = () => {
       title: 'Cài đặt',
       component: SettingStack,
       icon: Images.icons.settings,
+    },
+    {
+      name: TAB_NAVIGATION_ROOT.PAYMENT_ROUTE.ROOT,
+      title: 'Cài đặt',
+      component: PaymentScreenStack,
+      icon: Images.icons.payment,
     },
   ];
   return (

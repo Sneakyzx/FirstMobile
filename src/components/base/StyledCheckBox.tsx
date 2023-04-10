@@ -1,5 +1,7 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Pressable, StyleProp, StyleSheet, Text, TextStyle, TouchableOpacity, View, ViewStyle} from 'react-native';
 import React, {useState} from 'react';
+import StyledText from './StyledText';
+import StyledTouchable from './StyledTouchable';
 
 interface Props {
   color?: string;
@@ -27,7 +29,6 @@ const StyledCheckBox = (props: Props) => {
           {backgroundColor: props.isChecked ? color : 'white'},
         ]}
       />
-      <Text>Đồng ý với điều khoản</Text>
     </View>
   );
 };
@@ -48,4 +49,8 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     marginRight: 10,
   },
+  policy : {
+    color : '#0066FF',
+    fontWeight : 'bold'
+  }
 });

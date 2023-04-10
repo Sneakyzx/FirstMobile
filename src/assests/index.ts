@@ -1,5 +1,6 @@
 const Images = {
   icons: {
+    payment : require('./icons/payment.png'),
     hamburger : require('./icons/Hamburger.png'),
     spagetti : require('./icons/spagetti.png'),
     pizza : require('./icons/Pizza.png'),

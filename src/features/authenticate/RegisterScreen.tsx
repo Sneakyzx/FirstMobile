@@ -8,9 +8,17 @@ import StyledTouchable from '../../components/base/StyledTouchable';
 import StyledText from '../../components/base/StyledText';
 import { includes } from 'lodash';
 import { TextInput } from 'react-native-gesture-handler';
+import {TAB_NAVIGATION_ROOT} from '../../navigation/config/routes';
+import { navigate } from '../../navigation/NavigationService';
+
 
 
 const RegisterScreen = () => {
+
+  const goToPolicy = () => {
+    navigate(TAB_NAVIGATION_ROOT.POLICY_ROUTE.POLICY_SCREEN,{}
+    );
+  };
   //level 1
   //   const [username, setUserName] = useState();
   //   const [password, setPassword] = useState();
@@ -100,14 +108,18 @@ const RegisterScreen = () => {
         label="Email"
       />
       <StyledRadioButton />
-      <View style={{marginTop:30}}>
+      <View style={styles.policy}>
         <StyledCheckBox
           isChecked={user.policy}
           id={'policy'}
           onCheck={(id, policy: boolean) => onChangeText(policy, id)}
         />
+        <StyledText customStyle={{paddingTop : 10}} value='Đồng ý với ' />
+        <StyledTouchable onPress={goToPolicy}>
+          <StyledText customStyle={{paddingTop : 10,color : '#0066FF'}} value='điều khoản'/>
+          </StyledTouchable>
       </View>
-      <StyledTouchable
+      <StyledTouchable 
         onPress={onSubmitInfo}
         customStyle={{
           backgroundColor :'#e54a2b',
@@ -139,7 +151,14 @@ const styles = StyleSheet.create({
     backgroundColor : 'white',
     paddingHorizontal : 30,
     flex : 1
+  },
+  policy : {
+    justifyContent : 'center',
+    flexDirection : 'row',
+    marginTop : 30
+
   }
 });
+
 
 

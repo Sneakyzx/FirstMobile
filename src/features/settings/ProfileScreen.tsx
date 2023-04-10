@@ -1,8 +1,17 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import Images from '../../assests';
+import { TAB_NAVIGATION_ROOT } from '../../navigation/config/routes';
+import { navigate } from '../../navigation/NavigationService';
 
 const Profile = () => {
+  const goToOrder = () => {
+    navigate(TAB_NAVIGATION_ROOT.ORDER_ROUTE.ORDER_SCREEN)
+  }
+
+  const goToPayment = () => {
+    navigate(TAB_NAVIGATION_ROOT.PAYMENT_ROUTE.PAYMENT_SCREEN)
+  }
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -30,7 +39,7 @@ const Profile = () => {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.item}>
+        <TouchableOpacity onPress={goToPayment} style={styles.item}>
           <View style={styles.iconContent}>
             <Image
               style={styles.icon}
@@ -38,7 +47,7 @@ const Profile = () => {
             />
           </View>
           <View style={styles.infoContent}>
-            <Text style={styles.info}>Thông tin tài khoản</Text>
+            <Text style={styles.info}>Quản lý thanh toán</Text>
           </View>
         </TouchableOpacity>
 
@@ -54,7 +63,7 @@ const Profile = () => {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.item}>
+        <TouchableOpacity onPress={goToOrder} style={styles.item}>
           <View style={styles.iconContent}>
             <Image
               style={styles.icon}
@@ -62,7 +71,7 @@ const Profile = () => {
             />
           </View>
           <View style={styles.infoContent}>
-            <Text style={styles.info}>Sản phẩm đã mua</Text>
+            <Text style={styles.info}>Sản phẩm đã chọn</Text>
           </View>
         </TouchableOpacity>
       </View>
