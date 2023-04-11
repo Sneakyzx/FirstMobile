@@ -8,8 +8,10 @@ import SpagettiItem from './common/SpagettiItem'
 import PizzaItem from './common/PizzaItem'
 import ItemList from './common/ItemList'
 import BestSellerItem from './common/BestSellerItem'
+import CreditCardForm from '../../Hung/CreditCardForm'
 
 const MenuScreen = () => {
+ 
   return (
     <ScrollView style={{paddingHorizontal : 20}}>
      <HomeHeader/>
@@ -19,16 +21,11 @@ const MenuScreen = () => {
         <StyledText customStyle={{color : 'white', fontWeight:'bold'}} value='Đặt món ngay'/>
       </TouchableOpacity>
       </View>
-      <StyledText value='Các món ăn' customStyle={styles.tittle}/>
       <FlatList showsHorizontalScrollIndicator={false} keyExtractor={(item) => item.toString() } horizontal data={[1]} renderItem={() => {
         return  <ItemList />
       }}/>
-      <StyledText value='Danh sách món ăn' customStyle={styles.tittle}  />
-      <FlatList  showsHorizontalScrollIndicator={false} keyExtractor={(item) => item.toString() } horizontal data={[1,2,3]} renderItem={() => {
-        return  <HamburgerItem />
-      }}/>
       <StyledText value='Các món bán chạy' customStyle={styles.tittle}  />
-       <FlatList  showsHorizontalScrollIndicator={false} keyExtractor={(item) => item.toString() } horizontal data={[1,2,3]} renderItem={() => {
+       <FlatList  showsHorizontalScrollIndicator={false} keyExtractor={(item) => item.toString() } horizontal data={[1,2,3,4]} renderItem={() => {
         return  <BestSellerItem />
       }}/>
       

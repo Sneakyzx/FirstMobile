@@ -14,6 +14,7 @@ import navigationConfigs, {tabScreenOptions} from '../config/options';
 import {TAB_NAVIGATION_ROOT} from '../config/routes';
 import MenuScreen from '../../features/home/MenuScreen';
 import CreditCardForm from '../../Hung/CreditCardForm';
+import BestSellerItemCopy from '../../features/home/common/BestSellerItem copy';
 
 
 const MainStack = createStackNavigator();

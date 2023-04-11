@@ -19,6 +19,16 @@ const Images = {
       home: require('./icons/user.png'),
       setting: require('./icons/lock.png'),
     },
+    productItem : {
+      beefburger : require('./item/beefburger.png'),
+      chickenburger : require('./item/chickenburger.png'),
+      forkburger : require('./item/forkburger.png'),
+      burgercombo : require('./item/burgercombo.png'),
+      pizzahaisan : require('./item/pizzahaisan.png'),
+      pizzabo : require('./item/pizzabo.png'),
+      pizzahawaii: require('./item/pizzahawai.png'),
+
+    }
   },
 };
 
