@@ -25,7 +25,7 @@ const MenuScreen = () => {
         return  <ItemList />
       }}/>
       <StyledText value='Các món bán chạy' customStyle={styles.tittle}  />
-       <FlatList  showsHorizontalScrollIndicator={false} keyExtractor={(item) => item.toString() } horizontal data={[1,2,3,4]} renderItem={() => {
+       <FlatList  showsHorizontalScrollIndicator={false} keyExtractor={(item) => item.toString() } horizontal data={[1]} renderItem={() => {
         return  <BestSellerItem />
       }}/>
       

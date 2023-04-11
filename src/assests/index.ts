@@ -27,6 +27,9 @@ const Images = {
       pizzahaisan : require('./item/pizzahaisan.png'),
       pizzabo : require('./item/pizzabo.png'),
       pizzahawaii: require('./item/pizzahawai.png'),
+      spagettibo : require('./item/spagettibo.png'),
+      spagettivien : require('./item/spagettiball.png'),
+      spagettikem : require('./item/spagettikem.png')
 
     }
   },

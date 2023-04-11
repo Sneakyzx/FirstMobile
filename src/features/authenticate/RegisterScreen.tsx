@@ -15,53 +15,52 @@ import { navigate } from '../../navigation/NavigationService';
 
 const RegisterScreen = () => {
 
-  const goToPolicy = () => {
-    navigate(TAB_NAVIGATION_ROOT.POLICY_ROUTE.POLICY_SCREEN,{}
-    );
-  };
-  //level 1
-  //   const [username, setUserName] = useState();
-  //   const [password, setPassword] = useState();
-  //   const [username, setUserName] = useState();
-  //   const [username, setUserName] = useState();
-  //   const [username, setUserName] = useState();
-  //   const [policy, setPolicy] = useState();
-
-  // level 2
-  //   const [user, setUser] = useState({username: '', policy: '', password: ''});
-
-  //   const onChangeUserName = (value: string) => {
-  //     setUser({...user, username: value});
-  //   };
-  //   const onChangePassword = () => {};
-  //   const onChangePolicy = () => {};
-
-  // level 3
   const {user, onChangeText} = useOnChangInput();
 
   console.log('USER', user);
-  // level 4: dùng REact hook form -libs
 
   const onSubmitInfo = () => {
     let isPassed = false;
+   
+
     if (user.username.length < 6) {
       Alert.alert('USER CHƯA ĐÚNG ĐỊNH DẠNG')
       isPassed = false
     }
-    if(user.password.length < 8){
+    else if(user.password.length < 8){
       Alert.alert('MẬT KHẨU PHẢI LỚN HƠN 8 KÝ TỰ')
       isPassed = false
     }
-    if(user.password != user.checkPassword){
+    else if(user.password != user.checkPassword){
       Alert.alert('VUI LÒNG KIỂM TRA LẠI MẬT KHẨU')
       isPassed = false
-      return 
+    }
+    else if(user.policy != true){
+      Alert.alert('VUI LÒNG ĐỒNG Ý VỚI ĐIỀU KHOẢN SỬ DỤNG')
+      isPassed = false
+    }
+    else if(user.email.length < 1){
+      Alert.alert('VUI LÒNG NHẬP ĐẦY ĐỦ EMAIL')
+      isPassed = false
+      return
     }
     
-    // sau khi validate xong
-    // call API
+    else{
+      isPassed = true;
+      Alert.alert('Đăng ký thành công')
+      navigate(TAB_NAVIGATION_ROOT.AUTHENTICATE_ROUTE.LOGIN)
+     
+    }
+    
+
   };
 
+  
+  const goToPolicy = () => {
+    navigate(TAB_NAVIGATION_ROOT.POLICY_ROUTE.POLICY_SCREEN,{}
+    );
+  };
+ 
   return (
     <ScrollView style={styles.backgroundREG}>
       <StyledText customStyle={{

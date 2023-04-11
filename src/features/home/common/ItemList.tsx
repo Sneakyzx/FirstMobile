@@ -11,7 +11,7 @@ const data = [
     ], },
     { id: 2, title: 'Hamburger',image: require('../../../assests/icons/Hamburger.png'),
      innerData: [
-      { id: 1, name: 'Burger Bò',image : require('../../../assests/item/beefburger.png'),price : '20.000Đ',description : 'Burger và bò' },
+      { id: 1, name: 'Burger Bò',image : require('../../../assests/item/beefburger.png'),price : '20.000Đ',description : 'Burger và bò mềm' },
       { id: 2, name: 'Burger Gà',image : require('../../../assests/item/chickenburger.png'),price : '20.000Đ',description : 'Burger và gà' },
       { id: 3, name: 'Burger Xúc xích phô mai', image : require('../../../assests/item/forkburger.png'),price : '20.000Đ',description : 'Burger và xúc xích phủ phô mai' },
       { id: 4, name: 'Combo burger burger và nước',image : require('../../../assests/item/burgercombo.png'),price : '89.000Đ',description : 'Bao gồm 1 burger 1 khoai 1 nước' },
@@ -20,9 +20,9 @@ const data = [
       id: 3,
       title: 'Spagetti',image: require('../../../assests/icons/spagetti.png'),
       innerData: [
-        { id: 1, name: 'Inner Data 3',image : require('../../../assests/item/beefburger.png'),price : '20.000Đ',description : 'Burger và bò' },
-        { id: 2, name: 'Inner Data 3',image : require('../../../assests/item/beefburger.png'),price : '20.000Đ',description : 'Burger và bò' },
-        { id: 3, name: 'Inner Data 3',image : require('../../../assests/item/beefburger.png'),price : '20.000Đ',description : 'Burger và bò' },
+        { id: 1, name: 'Spagetti sốt bò băm cà chua',image : require('../../../assests/item/spagettiball.png'),price : '60.000Đ',description : 'Bò xay kèm nước sốt cà chua' },
+        { id: 2, name: 'Spagetti kèm thịt heo viên',image : require('../../../assests/item/spagettibo.png'),price : '60.000Đ',description : 'Thịt heo xay vo viên mềm' },
+        { id: 3, name: 'Spagetti sốt kem nấm',image : require('../../../assests/item/spagettikem.png'),price : '60.000Đ',description : 'Sốt kem nấm béo ngậy' },
       ],
     },
   ];
